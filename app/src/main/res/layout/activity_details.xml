@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.details.DetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="35dp"
+                android:textSize="35sp"
+                android:background="@color/blueColor"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                tools:text="Movie title"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_margin="16dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_movie"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/img_placeholder"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="16dp"
+                    >
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        tools:text="2019"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:textAlignment="viewStart"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        tools:text="120mins"
+                        android:textStyle="bold|italic"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:textAlignment="viewStart"
+                        />
+                    <TextView
+                        android:id="@+id/tv_ranking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="25sp"
+                        tools:text="0.0" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_fav"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_favourite"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            tools:src="@drawable/ic_favorite" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="16dp"
+                >
+                <TextView
+                    android:id="@+id/tv_overview_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:layout_margin="8dp"
+                    tools:text="movie overview" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/separator"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/trailers"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTrailers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/reviews"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9F9F9"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

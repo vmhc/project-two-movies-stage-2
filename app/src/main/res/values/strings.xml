@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">movieW</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="upcoming">UpComing</string>
+    <string name="favourites">Favourites</string>
+    <string name="popular">Popular</string>
+    <string name="overview">Overview</string>
+    <string name="release_date">Release Date</string>
+    <string name="rating">Rating</string>
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="play">Play</string>
+    <string name="movie_details">Movie Details</string>
+    <string name="ranking_placeholder">1%.1f/10</string>
+    <string name="runtime_placeholder">1%dmins</string>
+</resources>
